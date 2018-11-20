@@ -1,0 +1,6 @@
+react-native run-android
+react-native log-android
+/opt/Android/Sdk/tools/emulator -avd "Nexus_5X_API_26"
+/opt/Android/Sdk/tools/emulator -avd Nexus_5X_API_26_12
+/opt/Android/Sdk/emulator/qemu/linux-x86_64/qemu-system-i386 -netdelay none -netspeed full -avd "Nexus_5X_API_26_12"
+/opt/genymobile/genymotion//player --vm-name "Samsung Galaxy S8 - 8.0 - API 26 - 1440x2960" --from-plugin=1.0.7
