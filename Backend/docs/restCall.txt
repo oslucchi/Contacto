@@ -1,0 +1,108 @@
+menuObject
+{
+/* 
+ * The menu come structured by level. 
+ * The first level is the root of the menu. A level could have sub menu. In this case the 
+ * restCall is null and the array of menuObject is populated accordingly
+ */
+ 	idMenu
+ 	idParent
+	level
+	caption
+	restCall
+	[menuObject]
+}
+
+personObject
+{
+/* To be specified (* is mandatory during the registration phase) */
+	firstName	*	
+	lastName	*
+	email		*
+	password	*
+	phoneMob	*
+	phoneLand
+	language	
+	imageURL	// if populated it should be uploaded during the registration phase
+/* Assigned by the system on successful registration */ 
+	id
+	status
+	idRole
+}
+
+
+User login/register
+
+/auth/register
+	/* The user is not logged in at the end of the registration phase */
+	POST
+	Headers
+		Token
+		Language
+
+
+	Returns
+		{
+			status : int
+			errorMessage : string 
+		}
+		
+/auth/login
+	- The user is logged in at the end of the registration phase
+	POST
+	Headers
+		Token
+		Language
+
+	User object 
+		To be specified (* is mandatory)
+			email		*
+			password	*
+	
+	Returns
+		{
+			status : int
+			errorMessage : string 
+			token : string
+			user : personObject
+		}
+
+/auth/loginByToken
+	POST
+	Headers
+		Token
+		Language
+	
+	Returns
+		{
+			status : int
+			errorMessage : string 
+			token : string
+			user : personObject
+		}
+
+/auth/logout
+	POST
+	Headers
+		Token
+		
+/menu
+	POST
+	Headers
+		Token
+		Language
+	
+	Returns
+		{
+			menu : menuObject
+		}
+
+/project/list
+	GET
+	Headers
+		Token
+		Language
+	
+	Returns
+		{
+		}

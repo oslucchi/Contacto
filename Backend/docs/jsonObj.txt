@@ -1,0 +1,7 @@
+{
+"email" : "osvaldo.lucchini@gmail.com",
+"password" : "pippo",
+"firstName" : "osvaldo",
+"lastName" : "lucchini",
+"phoneMob" : "+393488704431"
+}
